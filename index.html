@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kol-Kobja Labs | Innovating the Future</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kol-Kobja Labs — Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Kol-Kobja Labs</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button id="theme-toggle">🌙</button>
-  </header>
+  <div class="page-wrap">
+    <header class="site-header">
+      <div class="brand">
+        <a href="index.html" class="logo">Kol-Kobja Labs</a>
+        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+      </div>
 
-  <!-- Banner Section -->
-  <section class="banner">
-    <div class="banner-text">
-      <h2>Innovating the Intersection of IoT, AI, and Embedded Systems</h2>
-      <p>Building intelligent, connected solutions for the modern world.</p>
-      <a href="projects.html" class="btn">View Projects</a>
-    </div>
-  </section>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-  <!-- Scroll Animation Sections -->
-  <section class="scroll-section fade-in">
-    <h3>Our Vision</h3>
-    <p>To make technology accessible and meaningful through innovation in AI, IoT, and embedded intelligence.</p>
-  </section>
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </header>
 
-  <section class="scroll-section slide-in">
-    <h3>What We Build</h3>
-    <p>From smart wearables to industrial IoT systems, we engineer solutions that merge creativity with computation.</p>
-  </section>
+    <!-- Banner -->
+    <section class="banner">
+      <img src="assets/banner.jpg" alt="Kol-Kobja Labs banner" class="banner-img" />
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h1>Innovating the intersection of IoT, AI & embedded systems</h1>
+        <p>We design intelligent, connected systems — from hardware prototypes to edge AI.</p>
+        <div class="banner-cta">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn ghost" href="about.html">Learn More</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="scroll-section fade-in">
-    <h3>Join the Revolution</h3>
-    <p>Collaborate with us to design smarter products, automate industries, and empower ideas that matter.</p>
-  </section>
+    <!-- Animated scroll sections -->
+    <main>
+      <section class="panel scroll-reveal" data-anim="fade">
+        <h2>Our Vision</h2>
+        <p>To enable practical, human-centered intelligence through rigorous engineering and creative experimentation.</p>
+      </section>
 
-  <footer>
-    <p>© 2025 Kol-Kobja Labs. All rights reserved.</p>
-  </footer>
+      <section class="panel scroll-reveal" data-anim="slide">
+        <h2>What We Build</h2>
+        <p>Embedded firmware, IoT systems, PCB prototypes and ML models tuned for resource-constrained devices.</p>
+      </section>
+
+      <section class="panel scroll-reveal" data-anim="fade">
+        <h2>Join the Revolution</h2>
+        <p>Collaborate with us on prototypes, research, or real-world pilots that need hardware + software expertise.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
+      <div class="footer-links">
+        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
+      </div>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
