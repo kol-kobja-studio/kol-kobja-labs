@@ -1,61 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kol-Kobja Labs — Contact</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Contact Kol-Kobja Labs for collaboration, workshops, and projects."/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="site-header">
-      <div class="brand">
-        <a href="index.html" class="logo">Kol-Kobja Labs</a>
-        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Kol-Kobja Labs</a>
+
+      <div class="actions">
+        <button id="theme-toggle-contact" class="btn icon" aria-label="Toggle theme" title="Toggle theme">
+          <span id="theme-icon-contact">🌓</span>
+        </button>
+
+        <button id="nav-toggle-contact" class="btn icon nav-toggle" aria-label="Open menu" aria-expanded="false">
+          ☰
+        </button>
       </div>
 
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
+      <nav id="main-nav-contact" class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
       </nav>
+    </div>
+  </header>
 
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-    </header>
+  <main class="container contact-main">
+    <section class="contact-hero">
+      <h1>Get in touch</h1>
+      <p class="lead">For collaborations, workshops, or project inquiries — drop us a message.</p>
+    </section>
 
-    <main class="content">
-      <section class="panel">
-        <h2>Contact</h2>
-        <p>Please replace the placeholders below with your real contact details or add an inbound form later.</p>
+    <section class="contact-grid">
+      <form class="contact-form" action="#" method="post" novalidate>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>youremail@example.com</p>
-          </div>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
 
-          <div class="contact-card">
-            <h3>LinkedIn</h3>
-            <p>https://www.linkedin.com/in/yourprofile</p>
-          </div>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" placeholder="Tell us about your idea..." required></textarea>
+        </label>
 
-          <div class="contact-card">
-            <h3>GitHub</h3>
-            <p>https://github.com/yourusername</p>
-          </div>
+        <div>
+          <button class="btn primary" type="submit">Send message</button>
         </div>
-      </section>
-    </main>
+      </form>
 
-    <footer class="site-footer">
-      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
+      <aside class="contact-info">
+        <div class="card">
+          <h3>Location</h3>
+          <p>Kolkata, India</p>
+
+          <h3>Connect</h3>
+          <p class="muted">Replace with your email or social links</p>
+          <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year-contact"></span> Kol-Kobja Labs</div>
       <div class="footer-links">
-        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

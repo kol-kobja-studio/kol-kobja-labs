@@ -1,85 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kol-Kobja Labs — Projects</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Projects — IoT, Embedded Systems, ML for Edge."/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="site-header">
-      <div class="brand">
-        <a href="index.html" class="logo">Kol-Kobja Labs</a>
-        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Kol-Kobja Labs</a>
+
+      <div class="actions">
+        <button id="theme-toggle-projects" class="btn icon" aria-label="Toggle theme" title="Toggle theme">
+          <span id="theme-icon-projects">🌓</span>
+        </button>
+
+        <button id="nav-toggle-projects" class="btn icon nav-toggle" aria-label="Open menu" aria-expanded="false">
+          ☰
+        </button>
       </div>
 
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link active">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav id="main-nav-projects" class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
+    </div>
+  </header>
 
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-    </header>
+  <main class="container">
+    <section class="projects-hero">
+      <h1>Projects</h1>
+      <p class="lead">A selection of recent prototypes and experiments.</p>
+    </section>
 
-    <main class="content">
-      <section class="panel">
-        <h2>Projects (placeholders)</h2>
-        <p>Replace these placeholders with your project videos or images and descriptions.</p>
-      </section>
-
-      <!-- Scrollable project carousel -->
-      <section class="panel">
-        <div class="projects-scroll" id="projects-scroll">
-          <!-- Project card 1 (placeholder) -->
-          <article class="project-card card-reveal">
-            <!-- Replace img with <video> if you have mp4s -->
-            <img src="assets/placeholder.jpg" alt="Project 1 preview" />
-            <div class="project-info">
-              <h3>Project One — Placeholder</h3>
-              <p>Short description: replace this with your project summary and highlights.</p>
-            </div>
-          </article>
-
-          <!-- Project card 2 -->
-          <article class="project-card card-reveal">
-            <img src="assets/placeholder.jpg" alt="Project 2 preview" />
-            <div class="project-info">
-              <h3>Project Two — Placeholder</h3>
-              <p>Short description: what the project does, tech used, results.</p>
-            </div>
-          </article>
-
-          <!-- Project card 3 -->
-          <article class="project-card card-reveal">
-            <img src="assets/placeholder.jpg" alt="Project 3 preview" />
-            <div class="project-info">
-              <h3>Project Three — Placeholder</h3>
-              <p>Short description: add links to GitHub or demo when ready.</p>
-            </div>
-          </article>
-
-          <!-- Add more cards as needed -->
+    <section class="project-grid">
+      <!-- Repeatable project card -->
+      <article class="project">
+        <div class="project-thumb" aria-hidden="true">📦</div>
+        <div class="project-body">
+          <h3>IoT Locker</h3>
+          <p>Secure, remote-managed locker with access control and audit logs.</p>
+          <p class="muted">Tech: ESP32 · MQTT · Node.js</p>
+          <a class="btn small" href="#">Read more</a>
         </div>
+      </article>
 
-        <div class="projects-controls">
-          <button id="scroll-left" class="control">◀</button>
-          <button id="scroll-right" class="control">▶</button>
-          <label class="auto-scroll-label"><input id="auto-scroll-toggle" type="checkbox" /> Auto-scroll</label>
+      <article class="project">
+        <div class="project-thumb" aria-hidden="true">🧠</div>
+        <div class="project-body">
+          <h3>Cognitive Stress Detector</h3>
+          <p>EEG-based classifier for stress detection in experimental settings.</p>
+          <p class="muted">Tech: EEG-GAN · PyTorch · Flask</p>
+          <a class="btn small" href="#">Read more</a>
         </div>
-      </section>
-    </main>
+      </article>
 
-    <footer class="site-footer">
-      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
+      <article class="project">
+        <div class="project-thumb" aria-hidden="true">⚙️</div>
+        <div class="project-body">
+          <h3>Temperature Monitoring</h3>
+          <p>Distributed sensors with anomaly alerts and historical charts.</p>
+          <p class="muted">Tech: Raspberry Pi · InfluxDB</p>
+          <a class="btn small" href="#">Read more</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year-projects"></span> Kol-Kobja Labs</div>
       <div class="footer-links">
-        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

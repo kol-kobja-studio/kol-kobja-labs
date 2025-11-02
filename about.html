@@ -1,70 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kol-Kobja Labs — About</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="About Kol-Kobja Labs — mission, team, and story."/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="site-header">
-      <div class="brand">
-        <a href="index.html" class="logo">Kol-Kobja Labs</a>
-        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Kol-Kobja Labs</a>
+
+      <div class="actions">
+        <button id="theme-toggle-about" class="btn icon" aria-label="Toggle theme" title="Toggle theme">
+          <span id="theme-icon-about">🌓</span>
+        </button>
+
+        <button id="nav-toggle-about" class="btn icon nav-toggle" aria-label="Open menu" aria-expanded="false">
+          ☰
+        </button>
       </div>
 
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav id="main-nav-about" class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
+    </div>
+  </header>
 
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-    </header>
+  <main class="container">
+    <section class="about-hero">
+      <h1>About Kol-Kobja Labs</h1>
+      <p class="lead">We are an innovation lab in Kolkata focused on hardware, AI and creative engineering.</p>
+    </section>
 
-    <main class="content">
-      <section class="panel">
-        <h2>About Kol-Kobja Labs</h2>
-        <p>Kol-Kobja Labs is an independent R&D initiative that blends hardware engineering, embedded software, and machine learning to build practical prototypes and products.</p>
-      </section>
+    <section class="two-col">
+      <div>
+        <h2>Mission</h2>
+        <p>Design practical, maintainable, and open prototypes that help bridge research and product-ready engineering.</p>
 
-      <section class="panel grid two-cols scroll-reveal" data-anim="slide">
-        <div class="card">
-          <h3>Mission</h3>
-          <p>Translate research and ideas into working prototypes that solve real problems.</p>
-        </div>
-        <div class="card">
-          <h3>Approach</h3>
-          <p>Rapid prototyping, iterative testing, and close integration of hardware and software components.</p>
-        </div>
-      </section>
-
-      <section class="panel grid three-cols scroll-reveal" data-anim="fade">
-        <div class="card">
-          <h4>Embedded Systems</h4>
-          <p>Firmware, RTOS, peripheral drivers and low-level optimization.</p>
-        </div>
-        <div class="card">
-          <h4>IoT & Cloud</h4>
-          <p>Secure connectivity, MQTT/HTTP pipelines and cloud integrations.</p>
-        </div>
-        <div class="card">
-          <h4>ML at the Edge</h4>
-          <p>Lightweight ML models, model optimization and sensor fusion.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
-      <div class="footer-links">
-        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
+        <h2>Approach</h2>
+        <p>We emphasize reproducibility: clear BOMs, thorough README, and modular firmware/software.</p>
       </div>
-    </footer>
-  </div>
 
-  <script src="script.js"></script>
+      <aside>
+        <div class="card">
+          <h3>Team</h3>
+          <p>Small, multidisciplinary — electronics, firmware, ML, and UX.</p>
+          <p class="muted">Want to collaborate? Reach out via the contact page.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container cards">
+      <article class="card">
+        <h3>Open Documentation</h3>
+        <p>All projects ship with README and setup guides.</p>
+      </article>
+      <article class="card">
+        <h3>Focus on Edge</h3>
+        <p>Low-latency systems and energy-aware designs for battery-powered devices.</p>
+      </article>
+      <article class="card">
+        <h3>Community</h3>
+        <p>Workshops and mentoring for students and hobbyists.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year-about"></span> Kol-Kobja Labs</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

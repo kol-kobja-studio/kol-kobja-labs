@@ -1,83 +1,107 @@
-/* Theme toggle (persists in localStorage) */
-(function(){
-  const btns = document.querySelectorAll('#theme-toggle'); // there are multiple btns loaded across pages
-  const current = localStorage.getItem('kk_theme');
-  if(current === 'dark'){ document.body.classList.add('dark'); updateToggleIcons('dark'); }
+/* script.js - theme toggle, nav toggle, small helpers
+   Mobile-first, runs on all pages.
+*/
 
-  function toggleTheme(){
-    const isDark = document.body.classList.toggle('dark');
-    localStorage.setItem('kk_theme', isDark ? 'dark' : 'light');
-    updateToggleIcons(isDark ? 'dark' : 'light');
+/* ---------- Utilities ---------- */
+const qs = s => document.querySelector(s);
+const qsa = s => Array.from(document.querySelectorAll(s));
+
+/* ---------- Theme handling ----------
+   - Detect system preference
+   - Allow manual toggle
+   - Persist to localStorage ("kk_theme")
+*/
+(function themeSetup(){
+  const root = document.documentElement;
+  const storageKey = "kk_theme";
+
+  const apply = (theme) => {
+    if (theme === "dark") root.setAttribute("data-theme", "dark");
+    else root.removeAttribute("data-theme");
+  };
+
+  // Initial: check localStorage else system
+  const saved = localStorage.getItem(storageKey);
+  if (saved) {
+    apply(saved);
+  } else {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    apply(prefersDark ? "dark" : "light");
   }
 
-  function updateToggleIcons(mode){
-    document.querySelectorAll('#theme-toggle').forEach(b=>{
-      b.textContent = (mode === 'dark') ? '☀️' : '🌙';
+  // update theme toggle icons (for multiple toggles across pages)
+  const updateIcons = () => {
+    qsa('#theme-icon, #theme-icon-about, #theme-icon-projects, #theme-icon-contact').forEach(el => {
+      if (!el) return;
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      el.textContent = isDark ? '🌙' : '☀️';
     });
-  }
+  };
+  updateIcons();
 
-  btns.forEach(b=>b.addEventListener('click', toggleTheme));
-})();
-
-/* Scroll reveal observer for panels & cards */
-(function(){
-  const reveals = document.querySelectorAll('.scroll-reveal');
-  const cards = document.querySelectorAll('.card-reveal');
-
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('visible');
-      }
+  // Attach toggle for all theme toggle buttons
+  qsa('#theme-toggle, #theme-toggle-about, #theme-toggle-projects, #theme-toggle-contact').forEach(btn=>{
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      apply(next);
+      localStorage.setItem(storageKey, next);
+      updateIcons();
     });
-  }, { threshold: 0.18 });
-
-  reveals.forEach(r=>obs.observe(r));
-  cards.forEach(c=>obs.observe(c));
-})();
-
-/* Projects carousel controls + gentle auto-scroll */
-(function(){
-  const container = document.getElementById('projects-scroll');
-  if(!container) return;
-
-  const left = document.getElementById('scroll-left');
-  const right = document.getElementById('scroll-right');
-  const autoToggle = document.getElementById('auto-scroll-toggle');
-
-  // click scroll
-  left && left.addEventListener('click', ()=> container.scrollBy({ left: -340, behavior: 'smooth' }));
-  right && right.addEventListener('click', ()=> container.scrollBy({ left: 340, behavior: 'smooth' }));
-
-  // gentle auto-scroll (pauses on hover or interaction)
-  let autoId = null;
-  let direction = 1; // 1 right, -1 left
-  let isPaused = false;
-
-  function startAutoScroll(){
-    if(autoId) return;
-    autoId = setInterval(()=> {
-      if(isPaused) return;
-      // when reaching near the end, reverse direction
-      const max = container.scrollWidth - container.clientWidth;
-      if(container.scrollLeft >= max - 2) direction = -1;
-      if(container.scrollLeft <= 2) direction = 1;
-      container.scrollLeft += direction * 1.2; // px per tick
-    }, 16); // roughly 60fps smooth
-  }
-
-  function stopAutoScroll(){
-    if(autoId){ clearInterval(autoId); autoId = null; }
-  }
-
-  autoToggle && autoToggle.addEventListener('change',(e)=>{
-    if(e.target.checked) startAutoScroll();
-    else stopAutoScroll();
   });
 
-  // hover/pointer pause
-  container.addEventListener('mouseenter', ()=> isPaused = true);
-  container.addEventListener('mouseleave', ()=> isPaused = false);
-  container.addEventListener('pointerdown', ()=> isPaused = true);
-  document.addEventListener('pointerup', ()=> isPaused = false);
+  // Listen to system changes unless user has saved preference
+  if (!saved && window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      apply(e.matches ? 'dark' : 'light');
+      updateIcons();
+    });
+  }
+})();
+
+/* ---------- Nav handling: hamburger on small screens ----------
+   - Toggles nav visibility by adding .mobile-open to nav
+   - Accessible: toggles aria-expanded on button
+*/
+(function navSetup(){
+  // find all nav toggle buttons (multiple per page header variants)
+  qsa('.nav-toggle').forEach(btn=>{
+    const idSuffix = btn.id.split('nav-toggle')[1] || '';
+    // prefer nearest nav element (same header)
+    const header = btn.closest('.header-inner') || document;
+    const nav = header.querySelector('.main-nav') || document.querySelector('.main-nav');
+
+    btn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('mobile-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      // set accessible label
+      btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+  });
+
+  // close mobile nav when clicking outside or on link
+  document.addEventListener('click', (ev) => {
+    const navs = qsa('.main-nav.mobile-open');
+    if (!navs.length) return;
+    if (ev.target.closest('.main-nav') || ev.target.closest('.nav-toggle')) return;
+    // close all
+    navs.forEach(n => n.classList.remove('mobile-open'));
+    qsa('.nav-toggle').forEach(btn => btn.setAttribute('aria-expanded','false'));
+  });
+
+  // close nav when pressing Escape
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') {
+      qsa('.main-nav.mobile-open').forEach(n => n.classList.remove('mobile-open'));
+      qsa('.nav-toggle').forEach(btn => btn.setAttribute('aria-expanded','false'));
+    }
+  });
+})();
+
+/* ---------- Small page helpers ---------- */
+(function pageHelpers(){
+  // set current year where present
+  const yearEls = qsa('#year, #year-about, #year-projects, #year-contact');
+  yearEls.forEach(el => el.textContent = new Date().getFullYear());
 })();
