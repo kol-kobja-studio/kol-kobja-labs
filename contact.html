@@ -1,61 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kol-Kobja Labs — Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kol-Kobja Labs</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="site-header">
-      <div class="brand">
-        <a href="index.html" class="logo">Kol-Kobja Labs</a>
-        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Kol-Kobja Labs</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
       </div>
-
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
-      </nav>
-
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-    </header>
-
-    <main class="content">
-      <section class="panel">
-        <h2>Contact</h2>
-        <p>Please replace the placeholders below with your real contact details or add an inbound form later.</p>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>youremail@example.com</p>
-          </div>
-
-          <div class="contact-card">
-            <h3>LinkedIn</h3>
-            <p>https://www.linkedin.com/in/yourprofile</p>
-          </div>
-
-          <div class="contact-card">
-            <h3>GitHub</h3>
-            <p>https://github.com/yourusername</p>
-          </div>
+      <div class="theme-toggle" id="theme-toggle">
+        <div class="toggle-circle">
+          <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>
+          <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
         </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
-      <div class="footer-links">
-        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
       </div>
-    </footer>
-  </div>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <section class="page-content">
+    <h1>Contact Us</h1>
+    <p>Want to collaborate, discuss projects, or share ideas?</p>
+    <a href="mailto:contact@kolkobjalabs.com" class="btn">Send an Email</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Kol-Kobja Labs. All rights reserved.</p>
+  </footer>
 </body>
 </html>

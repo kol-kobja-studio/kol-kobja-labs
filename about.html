@@ -1,70 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kol-Kobja Labs — About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Kol-Kobja Labs</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="site-header">
-      <div class="brand">
-        <a href="index.html" class="logo">Kol-Kobja Labs</a>
-        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Kol-Kobja Labs</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
-
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-    </header>
-
-    <main class="content">
-      <section class="panel">
-        <h2>About Kol-Kobja Labs</h2>
-        <p>Kol-Kobja Labs is an independent R&D initiative that blends hardware engineering, embedded software, and machine learning to build practical prototypes and products.</p>
-      </section>
-
-      <section class="panel grid two-cols scroll-reveal" data-anim="slide">
-        <div class="card">
-          <h3>Mission</h3>
-          <p>Translate research and ideas into working prototypes that solve real problems.</p>
+      <div class="theme-toggle" id="theme-toggle">
+        <div class="toggle-circle">
+          <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>
+          <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
         </div>
-        <div class="card">
-          <h3>Approach</h3>
-          <p>Rapid prototyping, iterative testing, and close integration of hardware and software components.</p>
-        </div>
-      </section>
-
-      <section class="panel grid three-cols scroll-reveal" data-anim="fade">
-        <div class="card">
-          <h4>Embedded Systems</h4>
-          <p>Firmware, RTOS, peripheral drivers and low-level optimization.</p>
-        </div>
-        <div class="card">
-          <h4>IoT & Cloud</h4>
-          <p>Secure connectivity, MQTT/HTTP pipelines and cloud integrations.</p>
-        </div>
-        <div class="card">
-          <h4>ML at the Edge</h4>
-          <p>Lightweight ML models, model optimization and sensor fusion.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
-      <div class="footer-links">
-        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
       </div>
-    </footer>
-  </div>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <section class="page-content">
+    <h1>About Kol-Kobja Labs</h1>
+    <p>Kol-Kobja Labs is a hub for innovation in IoT, AI, and Embedded Systems. Our goal is to create practical, research-based solutions that bridge the gap between engineering and intelligence.</p>
+    <p>We focus on developing IoT prototypes, intelligent monitoring systems, and AI-driven hardware designed for real-world applications.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Kol-Kobja Labs. All rights reserved.</p>
+  </footer>
 </body>
 </html>

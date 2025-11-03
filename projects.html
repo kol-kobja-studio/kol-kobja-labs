@@ -1,85 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kol-Kobja Labs — Projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Kol-Kobja Labs</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="page-wrap">
-    <header class="site-header">
-      <div class="brand">
-        <a href="index.html" class="logo">Kol-Kobja Labs</a>
-        <div class="tagline">a Kolkata-born innovation lab blending hardware, AI, and creative intelligence.</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Kol-Kobja Labs</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
-
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link active">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
-    </header>
-
-    <main class="content">
-      <section class="panel">
-        <h2>Projects (placeholders)</h2>
-        <p>Replace these placeholders with your project videos or images and descriptions.</p>
-      </section>
-
-      <!-- Scrollable project carousel -->
-      <section class="panel">
-        <div class="projects-scroll" id="projects-scroll">
-          <!-- Project card 1 (placeholder) -->
-          <article class="project-card card-reveal">
-            <!-- Replace img with <video> if you have mp4s -->
-            <img src="assets/placeholder.jpg" alt="Project 1 preview" />
-            <div class="project-info">
-              <h3>Project One — Placeholder</h3>
-              <p>Short description: replace this with your project summary and highlights.</p>
-            </div>
-          </article>
-
-          <!-- Project card 2 -->
-          <article class="project-card card-reveal">
-            <img src="assets/placeholder.jpg" alt="Project 2 preview" />
-            <div class="project-info">
-              <h3>Project Two — Placeholder</h3>
-              <p>Short description: what the project does, tech used, results.</p>
-            </div>
-          </article>
-
-          <!-- Project card 3 -->
-          <article class="project-card card-reveal">
-            <img src="assets/placeholder.jpg" alt="Project 3 preview" />
-            <div class="project-info">
-              <h3>Project Three — Placeholder</h3>
-              <p>Short description: add links to GitHub or demo when ready.</p>
-            </div>
-          </article>
-
-          <!-- Add more cards as needed -->
+      <div class="theme-toggle" id="theme-toggle">
+        <div class="toggle-circle">
+          <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>
+          <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
         </div>
-
-        <div class="projects-controls">
-          <button id="scroll-left" class="control">◀</button>
-          <button id="scroll-right" class="control">▶</button>
-          <label class="auto-scroll-label"><input id="auto-scroll-toggle" type="checkbox" /> Auto-scroll</label>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>© 2025 Kol-Kobja Labs — A Kolkata-born innovation lab</div>
-      <div class="footer-links">
-        <a href="#">Placeholder Email</a> · <a href="#">LinkedIn</a> · <a href="#">GitHub</a>
       </div>
-    </footer>
-  </div>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <section class="page-content">
+    <h1>Our Projects</h1>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>IoT Locker System</h3>
+        <p>Secure, sensor-driven locker solution with cloud monitoring.</p>
+      </div>
+      <div class="project-card">
+        <h3>Cognitive Stress Detector</h3>
+        <p>EEG-based stress analysis and feedback using ML algorithms.</p>
+      </div>
+      <div class="project-card">
+        <h3>Temperature Anomaly Alert System</h3>
+        <p>Smart environmental monitoring with alert notifications.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kol-Kobja Labs. All rights reserved.</p>
+  </footer>
 </body>
 </html>
