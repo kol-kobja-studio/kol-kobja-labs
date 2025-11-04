@@ -479,3 +479,10 @@ body.dark-theme .overlay {
   background-color: #ff4d4d;
   transform: translateY(-3px);
 }
+
+.section-subtitle {
+  font-size: 1.2em;
+  color: var(--text-color);
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
